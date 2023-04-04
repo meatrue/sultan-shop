@@ -40,7 +40,7 @@ const CartItem: React.FC<IPropsCartItem> = ({ item, count }) => {
   return (
     <div className={classes.container}>
       <Link className={classes.image} to={`/products/${barcode}`}>
-        <img src={`/img/catalog/${imageUrl}`} alt={name} />
+        <img src={`img/catalog/${imageUrl}`} alt={name} />
       </Link>
 
       <div className={classes.description}>

@@ -91,7 +91,7 @@ const Product: React.FC = () => {
       )}
 
       <div className={classes.imageWrapper}>
-        <img className={classes.image} src={`/img/catalog/${imageUrl}`} alt={name} />
+        <img className={classes.image} src={`img/catalog/${imageUrl}`} alt={name} />
       </div>
 
       <div className={classes.contentWrapper}>
