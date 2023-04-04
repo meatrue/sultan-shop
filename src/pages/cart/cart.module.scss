@@ -1,0 +1,89 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.goBack {
+  margin-bottom: 35px;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 50px;
+  font-size: $fz-title-main;
+  line-height: 1.2;
+  font-weight: 500;
+  color: $color-base-black;
+  text-transform: uppercase;
+
+  @include vp-767 {
+    margin-bottom: 20px;
+    font-size: $fz-title-main-mobile;
+  }
+}
+
+.titleSecondary {
+  margin-bottom: 100px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.cartList {
+  margin-bottom: 50px;
+
+  @include vp-767 {
+    margin-bottom: 25px;
+  }
+}
+
+.cartItem {
+  padding: 50px 0;
+  border-top: 1px dashed rgba(63, 78, 101, 0.3);
+
+  &:last-child {
+    border-bottom: 1px dashed rgba(63, 78, 101, 0.3);
+  }
+
+  @include vp-767 {
+    padding: 20px 0;
+  }
+}
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+}
+
+.orderButton {
+  width: 192px;
+  margin-right: 30px;
+  padding: 21px;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+
+
+  @include vp-767 {
+    order: 2;
+    display: block;
+    width: $min-content-width;
+    margin-right: 0;
+    padding: 31px;
+    text-align: center;
+  }
+}
+
+.total {
+  font-size: 30px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: $color-base-black;
+
+  @include vp-767 {
+    order: 1;
+    margin-bottom: 25px;
+  }
+}

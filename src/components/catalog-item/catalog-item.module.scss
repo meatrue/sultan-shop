@@ -1,0 +1,130 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 29px 21px 29px 23px;
+  background-color: $color-base-white;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    box-shadow: 0 14px 39px -11px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+  }
+
+  @media (max-width: (980px)) {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @include vp-767 {
+    &::before {
+      box-shadow: 0 9px 32px rgba(0, 0, 0, 0.04);
+    }
+  }
+}
+
+.imageLink {
+  width: 100%;
+  height: 214px;
+  margin-bottom: 5px;
+}
+
+.image {
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.size {
+  margin-bottom: 10px;
+}
+
+.titleLink {
+  margin-bottom: auto;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 500;
+  color: $color-base-black;
+}
+
+.titleBrand {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.infoContainer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.infoItem {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: 300;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.infoData {
+  font-weight: 500;
+  color: $color-base-black;
+}
+
+.priceCntainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.price {
+  margin-right: 20px;
+  font-size: 16px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: $color-base-black;
+}
+
+.buyButton {
+  position: relative;
+  width: 154px;
+  padding: 16.5px 57px 16.5px 25px;
+  font-size: 10px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 27px;
+    bottom: 0;
+    width: 23.7px;
+    height: 18.9px;
+    margin: auto 0;
+    content: "";
+    background-image: url("../../assets/svg/cart-white.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

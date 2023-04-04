@@ -1,0 +1,21 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 21px;
+
+  @include vp-1449 {
+    grid-template-columns: repeat(2, 1fr);
+    padding-bottom: 0;
+  }
+
+  @media (max-width: (980px)) {
+    grid-template-columns: 1fr;
+  }
+
+  @include vp-767 {
+    grid-gap: 10px;
+  }
+}

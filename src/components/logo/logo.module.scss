@@ -1,0 +1,23 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.logoLink {
+  transition: opacity $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  svg {
+    width: 156px;
+    height: auto;
+
+    @include vp-1449 {
+      width: 120px;
+    }
+
+    @include vp-767 {
+      width: 97px;
+    }
+  }
+}

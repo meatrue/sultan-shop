@@ -1,0 +1,80 @@
+.wrapper {
+  min-width: $min-content-width;
+  max-width: $max-content-width;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.reset-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.breadcrumbsItem {
+  position: relative;
+  margin: 0 10px;
+  font-weight: 300;
+  color: $color-primary;
+
+  &:not(:last-child)::after {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    bottom: 0;
+    width: 1px;
+    content: "";
+    border-right: 1px dashed $color-primary;
+    opacity: 0.3;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &:last-child {
+    margin-right: 0;
+    opacity: 0.5;
+  }
+}
+
+.button {
+  color: $color-base-white;
+  background-color: $color-accent;
+  border: none;
+  border-radius: $br-button;
+  cursor: pointer;
+  transition: all $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+

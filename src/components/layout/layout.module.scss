@@ -1,0 +1,10 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.main {
+  padding: 45px $padding 102px;
+
+  @include vp-767 {
+    padding: 20px $padding-mobile 50px;
+  }
+}

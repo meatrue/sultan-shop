@@ -1,0 +1,128 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.inputContainer {
+  margin-bottom: 15px;
+}
+
+.filterTitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-base-black;
+}
+
+.searchLabel {
+  position: relative;
+  display: block;
+}
+
+.searchInput {
+  width: 238px;
+  padding: 20px 60px 20px 20px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: $color-primary;
+  background-color: $color-additional;
+  border: none;
+  border-radius: $br-input;
+
+  &::placeholder {
+    color: #5c6370;
+  }
+
+  @include vp-767 {
+    width: 100%;
+  }
+}
+
+.searchButton {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  padding: 0;
+  background-color: $color-accent;
+  background-image: url("../../assets/svg/search.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.option {
+  display: flex;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkboxValue {
+  margin-right: 5px;
+}
+
+.filtredItemsCount {
+  align-self: flex-end;
+  margin-bottom: 2px;
+  font-size: 10px;
+}
+
+.showMore,
+.hide {
+  position: relative;
+  margin-top: 15px;
+  padding-right: 12px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: $color-primary;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 7px;
+    height: 7px;
+    margin: auto 0;
+    content: "";
+    background-image: url("../../assets/svg/triangle.svg");
+    background-repeat: no-repeat;
+    background-position: contain;
+    transform: translateY(2px);
+  }
+}
+
+.hide {
+  &::after {
+    transform: rotate(180deg);
+  }
+}

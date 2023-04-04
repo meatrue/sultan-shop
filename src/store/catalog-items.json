@@ -1,0 +1,253 @@
+[
+  {
+    "name": "средство для мытья посуды Crystal",
+    "imageUrl": "catalog-1.png",
+    "sizeType": "мл",
+    "size": "450",
+    "barcode": "3604049097548",
+    "producer": 0,
+    "brand": 0,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "price": 48.16,
+    "careType": [0],
+    "inStock": true
+  },
+
+  {
+    "name": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    "imageUrl": "catalog-2.png",
+    "sizeType": "г",
+    "size": "15X28.8",
+    "barcode": "4704049097548",
+    "producer": 1,
+    "brand": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.",
+    "price": 101.12,
+    "careType": [1, 2],
+    "inStock": false
+  },
+
+  {
+    "name": "Порошок стиральный Автомат 100 пятен COMPACT",
+    "imageUrl": "catalog-2.png",
+    "sizeType": "г",
+    "size": "1500",
+    "barcode": "4604049097533",
+    "producer": 2,
+    "brand": 3,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "price": 63.55,
+    "careType": [0, 1, 2],
+    "inStock": true
+  },
+
+  {
+    "name": "средство для мытья посуды Crystal",
+    "imageUrl": "catalog-1.png",
+    "sizeType": "мл",
+    "size": "450",
+    "barcode": "4604140097548",
+    "producer": 3,
+    "brand": 4,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "price": 38.15,
+    "careType": [6],
+    "inStock": true
+  },
+
+  {
+    "name": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    "imageUrl": "catalog-3.png",
+    "sizeType": "г",
+    "size": "15X28.8",
+    "barcode": "4604409097548",
+    "producer": 4,
+    "brand": 2,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.",
+    "price": 200,
+    "careType": [7],
+    "inStock": true
+  },
+
+  {
+    "name": "Порошок стиральный Автомат 100 пятен COMPACT",
+    "imageUrl": "catalog-2.png",
+    "sizeType": "г",
+    "size": "1500",
+    "barcode": "4604049051548",
+    "producer": 4,
+    "brand": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 163.55,
+    "careType": [9, 10],
+    "inStock": true
+  },
+
+  {
+    "name": "средство для мытья посуды Crystal",
+    "imageUrl": "catalog-4.png",
+    "sizeType": "мл",
+    "size": "450",
+    "barcode": "4604043357548",
+    "producer": 3,
+    "brand": 9,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis.",
+    "price": 55.77,
+    "careType": [8],
+    "inStock": true
+  },
+
+  {
+    "name": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    "imageUrl": "catalog-4.png",
+    "sizeType": "г",
+    "size": "15X28.8",
+    "barcode": "4604049097511",
+    "producer": 3,
+    "brand": 7,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis.",
+    "price": 117.55,
+    "careType": [7, 8],
+    "inStock": false
+  },
+
+  {
+    "name": "Порошок стиральный Автомат 100 пятен COMPACT",
+    "imageUrl": "catalog-1.png",
+    "sizeType": "г",
+    "size": "1500",
+    "barcode": "4603189097548",
+    "producer": 0,
+    "brand": 5,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 63.33,
+    "careType": [4, 5, 6],
+    "inStock": true
+  },
+
+  {
+    "name": "средство для мытья посуды Crystal",
+    "imageUrl": "catalog-3.png",
+    "sizeType": "мл",
+    "size": "450",
+    "barcode": "1604049097540",
+    "producer": 1,
+    "brand": 1,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.",
+    "price": 333.17,
+    "careType": [1],
+    "inStock": true
+  },
+
+  {
+    "name": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    "imageUrl": "catalog-2.png",
+    "sizeType": "г",
+    "size": "15X28.8",
+    "barcode": "4404049097542",
+    "producer": 2,
+    "brand": 0,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.",
+    "price": 155.11,
+    "careType": [3],
+    "inStock": true
+  },
+
+  {
+    "name": "Порошок стиральный Автомат 100 пятен COMPACT",
+    "imageUrl": "catalog-3.png",
+    "sizeType": "г",
+    "size": "1500",
+    "barcode": "5604049097546",
+    "producer": 4,
+    "brand": 2,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "price": 63.55,
+    "careType": [9],
+    "inStock": true
+  },
+
+  {
+    "name": "средство для мытья посуды Crystal",
+    "imageUrl": "catalog-1.png",
+    "sizeType": "мл",
+    "size": "450",
+    "barcode": "4604049097128",
+    "producer": 4,
+    "brand": 3,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis.",
+    "price": 48.15,
+    "careType": [5],
+    "inStock": true
+  },
+
+  {
+    "name": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    "imageUrl": "catalog-2.png",
+    "sizeType": "г",
+    "size": "15X28.8",
+    "barcode": "4604041247548",
+    "producer": 4,
+    "brand": 4,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 1000,
+    "careType": [5, 8],
+    "inStock": true
+  },
+
+  {
+    "name": "Порошок стиральный Автомат 100 пятен COMPACT",
+    "imageUrl": "catalog-4.png",
+    "sizeType": "г",
+    "size": "1500",
+    "barcode": "4604012197548",
+    "producer": 0,
+    "brand": 7,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 99.99,
+    "careType": [7],
+    "inStock": true
+  },
+
+  {
+    "name": "средство для мытья посуды Crystal",
+    "imageUrl": "catalog-3.png",
+    "sizeType": "мл",
+    "size": "450",
+    "barcode": "4604128097548",
+    "producer": 0,
+    "brand": 6,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis. Nunc elit, dignissim sed nulla ullamcorper enim, malesuada.",
+    "price": 85.17,
+    "careType": [5],
+    "inStock": true
+  },
+
+  {
+    "name": "Автмат Гель СМС жидкое в растворимых капсулах Liquid Capsules Горный родник",
+    "imageUrl": "catalog-1.png",
+    "sizeType": "г",
+    "size": "15X28.8",
+    "barcode": "4604097497548",
+    "producer": 2,
+    "brand": 2,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis.",
+    "price": 111.11,
+    "careType": [3, 6, 7, 8],
+    "inStock": true
+  },
+
+  {
+    "name": "Порошок стиральный Автомат 100 пятен COMPACT2",
+    "imageUrl": "catalog-2.png",
+    "sizeType": "г",
+    "size": "1500",
+    "barcode": "4604040541748",
+    "producer": 4,
+    "brand": 3,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum ut justo, vestibulum sagittis iaculis iaculis. Quis mattis vulputate feugiat massa vestibulum duis. Faucibus consectetur aliquet sed pellentesque consequat consectetur congue mauris venenatis.",
+    "price": 77.77,
+    "careType": [1],
+    "inStock": false
+  }
+]

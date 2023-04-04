@@ -1,0 +1,86 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.mainWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 21px;
+  align-items: start;
+
+  @include vp-1449 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.breadcrumbs {
+  grid-column: 1 / -1;
+}
+
+.goBack {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-bottom: 14px;
+}
+
+.titleContainer {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: $fz-title-main;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $color-base-black;
+
+  @include vp-767 {
+    font-size: $fz-title-main-mobile;
+  }
+}
+
+.filters {
+  grid-column: 1 / 2;
+  margin: 0 auto;
+}
+
+.careTypes {
+  grid-column: 1 / -1;
+}
+
+.catalog {
+  grid-column: 2 / -1;
+
+  @include vp-767 {
+    grid-column: 1 / -1;
+  }
+}
+
+.notFound {
+  grid-column: 2 / -1;
+  font-size: 22px;
+  font-weight: 600;
+  color: $color-base-black;
+
+  @include vp-767 {
+    grid-column: 1 / -1;
+    font-size: 16px;
+  }
+}
+
+.pagination {
+  grid-column: 2 / -1;
+  justify-self: center;
+
+  @include vp-767 {
+    grid-column: 1 / -1;
+  }
+}

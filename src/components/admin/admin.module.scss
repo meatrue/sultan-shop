@@ -1,0 +1,148 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.formTitle {
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 24px;
+  color: $color-base-black;
+}
+
+.formTitleSecondary {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: $color-base-black;
+}
+
+.formItem {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.formItemLabel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.formItemTitle,
+.formItemFieldsetTitle {
+  width: 200px;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.formTextInput,
+.formTextArea {
+  width: 100%;
+  max-width: 600px;
+  padding: 6px 10px;
+  font-size: 16px;
+  color: $color-primary;
+  border: 1px solid #cbcbcb;
+}
+
+.formSelect {
+  padding: 6px 10px;
+  font-size: 16px;
+  color: $color-primary;
+  background-color: $color-base-white;
+  border: 1px solid #cbcbcb;
+  cursor: pointer;
+}
+
+.formTextArea {
+  height: 100px;
+}
+
+.formPrice,
+.formBarcode,
+.formImageUrl,
+.formSize {
+  max-width: 200px;
+}
+
+.formPriceLabel {
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.formSizeType {
+  margin-left: 20px;
+}
+
+.formItemFieldset {
+  display: inline-grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: flex-start;
+  justify-content: start;
+  grid-gap: 15px 40px;
+  margin-right: auto;
+  padding: 20px 30px 30px;
+  border: 1px solid $color-primary;
+  border-radius: 4px;
+
+  label {
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    cursor: pointer;
+  }
+}
+
+.formItemFieldsetTitle {
+  grid-column: 1 / -1;
+  margin-bottom: 10px;
+}
+
+.formButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.formButton {
+  display: block;
+  margin-right: 40px;
+  padding: 18px 50px;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.editButtonsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.saveButton,
+.cancelButton,
+.deleteButton {
+  display: block;
+  width: 180px;
+  margin-right: 40px;
+  padding: 18px 50px;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-align: center;
+}
+
+.saveButton {
+  background-color: #208b44;
+}
+
+.cancelButton {
+  background-color: #797f83;
+}
+
+.deleteButton {
+  background-color: #fa4830;
+}

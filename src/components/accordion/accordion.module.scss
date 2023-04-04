@@ -1,0 +1,43 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.accordionTitle {
+  position: relative;
+  display: inline-block;
+  padding-right: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-base-black;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 4px;
+    right: 0;
+    bottom: 0;
+    width: 7px;
+    height: 7px;
+    margin: auto 0;
+    content: "";
+    background-image: url("../../assets/svg/triangle.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(180deg);
+    transition: transform $trans-base;
+  }
+}
+
+.isHidden {
+  &::after {
+    transform: rotate(0deg);
+  }
+}
+
+.accordionContentWrapper {
+  overflow-y: hidden;
+  transition: all $trans-base;
+}
+
+.accordionContent {
+  padding-top: 20px;
+}

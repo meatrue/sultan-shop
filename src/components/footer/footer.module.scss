@@ -1,0 +1,333 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.footer {
+  padding: 71px $padding 116px;
+  color: $color-base-white;
+  background-color: $color-primary;
+
+  @include vp-767 {
+    padding: 15px $padding-mobile;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 40px;
+
+  @include vp-1449 {
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @include vp-767 {
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+.about {
+  max-width: 320px;
+
+  @include vp-1449 {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 20px;
+    max-width: none;
+  }
+
+  @include vp-767 {
+    display: block;
+  }
+}
+
+.menu {
+  padding-right: 35px;
+
+  @include vp-1449 {
+    padding-right: 0;
+  }
+
+  @include vp-767 {
+    justify-self: start;
+  }
+}
+
+.categories {
+  padding-right: 35px;
+
+  @include vp-1449 {
+    padding-right: 0;
+  }
+}
+
+.priceAndMessengers {
+  padding-right: 35px;
+
+  @include vp-1449 {
+    padding-right: 0;
+  }
+
+  @include vp-767 {
+    order: 5;
+    justify-self: start;
+  }
+}
+
+.contacts {
+  padding-right: 38px;
+
+  @include vp-1449 {
+    padding-right: 0;
+  }
+
+  @include vp-767 {
+    order: 4;
+  }
+}
+
+.sectionTitle {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 600;
+
+  @include vp-767 {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+}
+
+.priceListTitle {
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.logoContainer {
+  margin-bottom: 15px;
+
+  @include vp-767 {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.aboutText {
+  margin-top: 0;
+  margin-bottom: 45px;
+  font-size: 16px;
+
+  @include vp-1449 {
+    max-width: 300px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 15px;
+    font-size: 12px;
+  }
+}
+
+.emailForm {
+  width: 100%;
+}
+
+.emailText {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 12px;
+}
+
+.emailInputWrapper {
+  position: relative;
+  width: 282px;
+  margin: 0;
+
+  @include vp-1449 {
+    width: 100%;
+    min-width: 225px;
+    max-width: 282px;
+  }
+}
+
+.emailInput {
+  display: block;
+  width: 100%;
+  padding: 20px 70px 20px 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $color-primary;
+  background-color: $color-base-white;
+  border: none;
+  border-radius: $br-input;
+
+  &::placeholder {
+    color: #5c6370;
+  }
+}
+
+.emailSubmit {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  background-color: $color-accent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.categoryItem:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.categoryLink {
+  color: $color-base-white;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.downloadButton {
+  position: relative;
+  padding: 21px 80px 21px 50px;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 50px;
+    bottom: 0;
+    width: 17px;
+    height: 17px;
+    margin: auto 0;
+    content: "";
+    background-image: url("../../assets/svg/download.svg");
+    background-size: contain;
+  }
+
+  @include vp-767 {
+    margin-left: 44px;
+    padding: 12px 47px 12px 29px;
+    font-size: 12px;
+
+    &::after {
+      right: 29px;
+      width: 13px;
+      height: 13px;
+    }
+  }
+}
+
+.messengersTitle {
+  margin: 20px 0 15px;
+  font-size: $fz-base;
+}
+
+.messengersList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 39px);
+  grid-gap: 10px;
+  width: 214px;
+
+  @include vp-767 {
+    width: 140px;
+  }
+}
+
+.messengerLink {
+  width: 39px;
+  height: 39px;
+  transition: opacity $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contactsPhone {
+  margin-bottom: 25px;
+}
+
+.contactsPhoneItem:not(:last-child) {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.contactsLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: $color-base-white;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.contactsText {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.backCall {
+  font-size: 10px;
+  color: $color-base-white;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.contactsEmail {
+  margin-bottom: 25px;
+}
+
+.contactsEmailItem {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.cardsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 61px);
+  grid-gap: 5px;
+  width: 130px;
+}
+
+.cardLink {
+  width: 61px;
+  height: 39px;
+  transition: opacity $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

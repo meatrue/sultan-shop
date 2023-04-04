@@ -1,0 +1,549 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.menu {
+  padding: 14px $padding;
+  border-bottom: 2px solid rgba(63, 78, 101, 0.1);
+
+  @include vp-1449 {
+    display: none;
+  }
+}
+
+.menuWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
+}
+
+.contactsItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+  padding-left: 35px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2px;
+    margin: auto 0;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.contactsAddress {
+  &::before {
+    width: 14px;
+    height: 17px;
+    background-image: url("../../assets/svg/contacts-address.svg");
+  }
+}
+
+.contactsEmail {
+  &::before {
+    width: 17px;
+    height: 14px;
+    background-image: url("../../assets/svg/contacts-email.svg");
+  }
+}
+
+.contactsPhone {
+  &::before {
+    width: 14.5px;
+    height: 14.5px;
+    background-image: url("../../assets/svg/contacts-phone.svg");
+  }
+}
+
+.contactsItemTitle {
+  color: $color-base-black;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.contactsLink {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.contactsItemAdditional {
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.menuAdditional {
+  padding: 20px $padding;
+  border-bottom: 2px solid rgba(63, 78, 101, 0.1);
+
+  @include vp-1449 {
+    padding-bottom: 0;
+  }
+
+  @include vp-767 {
+    padding: 10px $padding-mobile 0;
+  }
+}
+
+.menuAdditionalWrapper {
+  display: flex;
+  align-items: center;
+
+  @include vp-1449 {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+.headerLogo {
+  margin-right: 38px;
+
+  @include vp-1449 {
+    grid-column: 2 / 3;
+    justify-self: center;
+    margin-right: 0;
+  }
+}
+
+.menuButton {
+  display: none;
+
+  @include vp-1449 {
+    position: relative;
+    display: block;
+    width: 42px;
+    height: 42px;
+    background-color: $color-accent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity $trans-base;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @include vp-1449 {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.menuButtonInner {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  left: 12px;
+  height: 2px;
+  content: "";
+  background-color: $color-base-white;
+  transform: translateY(-50%);
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    content: "";
+    background-color: $color-base-white;
+  }
+
+  &::before {
+    transform: translateY(-4px);
+  }
+
+  &::after {
+    transform: translateY(4px);
+  }
+}
+
+.tools {
+  display: flex;
+
+  @include vp-1449 {
+    position: relative;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 20px;
+    padding: 0;
+
+    &::before {
+      position: absolute;
+      top: 5px;
+      right: 50%;
+      bottom: 5px;
+      width: 1px;
+      content: "";
+      border-right: 1px dashed $color-primary;
+      opacity: 0.1;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -$padding;
+      left: -$padding;
+      content: "";
+      border-bottom: 2px solid rgba(63, 78, 101, 0.1);
+    }
+  }
+
+  @include vp-767 {
+    margin-top: 10px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: -$padding-mobile;
+      left: -$padding-mobile;
+      content: "";
+      border-bottom: 2px solid rgba(63, 78, 101, 0.1);
+    }
+  }
+}
+
+.catalogButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 192px;
+  margin-right: 15px;
+  padding: 21px 54px;
+  color: $color-base-white;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+  background-color: $color-accent;
+  border: none;
+  border-radius: $br-button;
+  cursor: pointer;
+  transition: all $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+
+  @include vp-1449 {
+    justify-self: stretch;
+    align-self: stretch;
+    width: auto;
+    margin-right: 0;
+    padding: 20px 0;
+    color: $color-primary;
+    background-color: transparent;
+  }
+
+  @include vp-767 {
+    padding: 13px 0;
+  }
+}
+
+.catalogButtonLabel {
+  position: relative;
+  padding-right: 27px;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 15px;
+    height: 15px;
+    margin: auto 0;
+    content: "";
+    background-image: url("../../assets/svg/catalog-button.svg");
+    background-size: contain;
+  }
+
+  @include vp-1449 {
+    padding: 0;
+
+    &::after {
+      left: -6px;
+      background-image: url("../../assets/svg/catalog-button-dark.svg");
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.searchForm {
+  position: relative;
+  width: 263px;
+  margin-right: 35px;
+
+  @include vp-1449 {
+    justify-self: stretch;
+    align-self: stretch;
+    display: flex;
+    align-items: stretch;
+    width: auto;
+    margin-right: 0;
+  }
+}
+
+.searchInput {
+  display: block;
+  width: 100%;
+  padding: 20px 70px 20px 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $color-primary;
+  background-color: $color-additional;
+  border: none;
+  border-radius: $br-input;
+
+  &::placeholder {
+    color: #5c6370;
+  }
+
+  @include vp-1449 {
+    display: none;
+  }
+}
+
+.searchSubmit {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  padding: 0;
+  background-color: $color-accent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity $trans-base;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include vp-1449 {
+    position: static;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: transparent;
+
+    svg path {
+      stroke: $color-primary;
+    }
+
+    &::after {
+      margin-left: 6px;
+      font-weight: 600;
+      color: $color-primary;
+      content: attr(data-title);
+    }
+  }
+}
+
+.backCall {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+  padding-right: 84px;
+
+  &::before {
+    position: absolute;
+    top: -18px;
+    right: 0;
+    width: 70px;
+    height: 92px;
+    content: "";
+    background-image: url("../../assets/back-call.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: -26px;
+    bottom: 0;
+    width: 1px;
+    height: 49px;
+    margin: auto 0;
+    content: "";
+    border-right: 1px dashed $color-primary;
+    opacity: 0.1;
+  }
+
+  @include vp-1449 {
+    display: none;
+  }
+}
+
+.backCallPhone {
+  margin-bottom: 5px;
+  color: $color-base-black;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.backCallTime {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.backCallLink {
+  font-size: 10px;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.downloadButton {
+  position: relative;
+  width: 200px;
+  margin-right: 50px;
+  padding: 21px 72px 21px 43px;
+  font-size: 14px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 43px;
+    bottom: 0;
+    width: 17px;
+    height: 17px;
+    margin: auto 0;
+    content: "";
+    background-image: url("../../assets/svg/download.svg");
+    background-size: contain;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: -26px;
+    bottom: 0;
+    width: 1px;
+    height: 49px;
+    margin: auto 0;
+    content: "";
+    border-right: 1px dashed $color-primary;
+    opacity: 0.1;
+  }
+
+  @include vp-1449 {
+    display: none;
+  }
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  transition: opacity $trans-base;
+
+  &:hover .cartCount {
+    opacity: 0.8;
+  }
+
+  @include vp-1449 {
+    grid-row: 1 / 1;
+    grid-column: 3 / 4;
+    justify-self: end;
+  }
+}
+
+.cartCount {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  background-image: url("../../assets/svg/cart.svg");
+  background-repeat: no-repeat;
+  background-size: 40px 28px;
+  background-position: center;
+
+  @include vp-767 {
+    width: 25px;
+    height: 25px;
+    background-size: 22px 15.6px;
+  }
+}
+
+.cartLabel {
+  position: absolute;
+  top: 0;
+  right: -14px;
+  display: flex;
+  width: 28px;
+  height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.2;
+  font-weight: 700;
+  color: $color-base-white;
+  background-color: $color-accent;
+  border: 3px solid $color-base-white;
+  border-radius: 50%;
+
+  &::after {
+    margin: auto;
+    content: attr(data-count);
+  }
+
+  @include vp-767 {
+    top: -8px;
+    right: -12px;
+    width: 23px;
+    height: 23px;
+  }
+}
+
+.cartAdditional {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.cartTitle {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.cartTotal {
+  color: $color-base-black;
+  font-weight: 600;
+}
+

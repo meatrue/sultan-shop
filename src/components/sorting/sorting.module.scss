@@ -1,0 +1,99 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.sortingContainer {
+  position: relative;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.sortingValueContainer {
+  width: 193px;
+  padding-right: 12px;
+  cursor: pointer;
+  transition: opacity $trans-base;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    bottom: 0;
+    width: 7px;
+    height: 7px;
+    margin: auto 0 6px 0;
+    content: "";
+    background-image: url("../../assets/svg/triangle.svg");
+    background-repeat: no-repeat;
+    background-position: contain;
+    transition: transform $trans-base;
+  }
+}
+
+.sortingValueInner {
+  display: flex;
+  max-width: 281px;
+  overflow-x: hidden;
+}
+
+.sortingLabel {
+  margin-right: 5px;
+  font-weight: 500;
+  color: $color-base-black;
+}
+
+.sortingValue {
+  position: relative;
+  padding-right: 16px;
+  white-space: nowrap;
+}
+
+.isArrowUp {
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+.sortingOptionsList {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: -40px;
+  z-index: 10;
+  margin: 0 auto;
+  background-color: $color-base-white;
+  border-radius: $br-block;
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.06);
+  transform: translateY(100%);
+  cursor: pointer;
+}
+
+.isClose {
+  visibility: hidden;
+}
+
+.sortingOption {
+  position: relative;
+  padding: 8px 12px;
+
+  &:first-child {
+    border-radius: $br-block $br-block 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $br-block $br-block;
+  }
+
+  &:hover {
+    background-color: rgba(63, 78, 101, 0.06);
+  }
+}
+
+.activeSorting {
+  font-weight: 600;
+  color: $color-base-black;
+  background-color: rgba(63, 78, 101, 0.06);
+}

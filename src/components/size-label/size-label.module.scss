@@ -1,0 +1,37 @@
+.sizeVolume,
+.sizeWeight {
+  position: relative;
+  font-size: 12px;
+  line-height: 1.25;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.sizeVolume {
+  padding-left: 17px;
+
+  &::before {
+    width: 9px;
+    height: 15px;
+    background-image: url("../../assets/svg/bottle.svg");
+  }
+}
+
+.sizeWeight {
+  padding-left: 25px;
+
+  &::before {
+    width: 20px;
+    height: 16px;
+    background-image: url("../../assets/svg/box.svg");
+  }
+}
