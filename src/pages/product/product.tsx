@@ -7,13 +7,13 @@ import Accordion from '../../components/accordion/accordion';
 import Counter from '../../components/counter/counter';
 import SizeLabel from '../../components/size-label/size-label';
 import { brands } from '../../store/brands';
-import catalogItems from '../../store/catalog-items.json';
 import { producers } from '../../store/producers';
 import { getProductById } from '../../utils/utils';
 import { addToCart } from '../../store/slices/cart-slice';
 import GoBack from '../../components/go-back/go-back';
 import { ProductItem } from '../../types';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
+import catalogItems from '../../assets/catalog-items.json';
 
 import classes from './product.module.scss';
 
@@ -38,8 +38,10 @@ const Product: React.FC = () => {
     query: '(max-width: 630px)',
   });
 
+  const products = useTypedSelector((state) => state.products.items);
+
   const { id } = useParams();
-  const product: ProductItem | undefined = getProductById(catalogItems, id);
+  const product: ProductItem | undefined = getProductById(products, id);
 
   const dispatch = useDispatch();
   const foundItem = useTypedSelector((state) =>

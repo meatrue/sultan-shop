@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { ProductItem } from '../../types';
 import { setProducts } from '../../store/slices/products-slice';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import catalogItems from '../../store/catalog-items.json';
+import catalogItems from '../../assets/catalog-items.json';
 import CatalogList from '../../components/catalog-list/catalog-list';
 import Sorting from '../../components/sorting/sorting';
 import CareTypes from '../../components/care-types/care-types';

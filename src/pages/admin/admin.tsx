@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import catalogItems from '../../store/catalog-items.json';
+import catalogItems from '../../assets/catalog-items.json';
 import { CATALOG_STORAGE_NAME, Storage } from '../../api/localstorage';
 import AddProductForm from '../../components/admin/add-product-form';
 import EditProductForm from '../../components/admin/edit-product-form';
