@@ -1,8 +1,8 @@
 {
   "name": "sultan-shop",
+  "homepage": "https://meatrue.github.io/sultan-shop/",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://meatrue.github.io/sultan-shop",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@types/node": "^18.15.11",
