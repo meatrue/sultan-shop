@@ -33,7 +33,7 @@ const CatalogItem: React.FC<ICatalogItemProps> = ({ item }) => {
   return (
     <article className={classes.container}>
       <Link className={classes.imageLink} to={itemLink}>
-        <img className={classes.image} src={`/img/catalog/${imageUrl}`} alt={name} />
+        <img className={classes.image} src={`img/catalog/${imageUrl}`} alt={name} />
       </Link>
       <SizeLabel size={size} sizeType={sizeType} className={classes.size} />
       <Link className={classes.titleLink} to={itemLink}>
