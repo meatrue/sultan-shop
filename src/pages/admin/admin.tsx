@@ -18,7 +18,7 @@ const Admin: React.FC = () => {
   useEffect(() => {
     const [loadedItems] = Storage.getFromStorage(CATALOG_STORAGE_NAME);
 
-    if (loadedItems) {
+    if (loadedItems && loadedItems.length) {
       dispatch(setProducts(loadedItems));
       return;
     }
