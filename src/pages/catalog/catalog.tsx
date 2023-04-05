@@ -41,7 +41,7 @@ const Catalog: React.FC = () => {
     const [loadedItems, storageError] = Storage.getFromStorage(CATALOG_STORAGE_NAME);
 
     let filteredSortedProducts: ProductItem[] =
-      loadedItems && !storageError ? loadedItems : catalogItems;
+      loadedItems && loadedItems.length && !storageError ? loadedItems : catalogItems;
     filteredSortedProducts = getSortedItems(filteredSortedProducts, sorting);
     filteredSortedProducts = filterByCareType(filteredSortedProducts, careType);
 
