@@ -1,24 +1,35 @@
-import React, { useRef, useState, ReactElement } from 'react';
+import React, { useRef, useState, ReactNode } from 'react';
 import classes from './accordion.module.scss';
 
 const IS_OPEN_DEFAULT = false;
 const HEIGHT_DEFAULT = 0;
+export enum Types {
+  STYLED = 'styled',
+}
 
 interface IAccordionProps {
   className: string;
   title: string;
-  children: ReactElement;
+  children: ReactNode;
+  type?: Types.STYLED;
 }
 
-const Accordion: React.FC<IAccordionProps> = ({ className, title, children }) => {
+const Accordion: React.FC<IAccordionProps> = ({ className, title, type, children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(IS_OPEN_DEFAULT);
-  const [height, setHeight] = useState<number>(HEIGHT_DEFAULT);
+  const [height, setHeight] = useState<number | string>(HEIGHT_DEFAULT);
+
   const contentRef = useRef<HTMLDivElement>(null);
+  const wrapperHeight = contentRef?.current?.offsetHeight;
 
   const onAccordionTitleClick = () => {
-    const wrapperHeight = isOpen ? 0 : contentRef?.current?.offsetHeight;
+    if (isOpen) {
+      typeof wrapperHeight === 'number' && setHeight(wrapperHeight);
+      setTimeout(() => setHeight(0), 10);
+    } else {
+      typeof wrapperHeight === 'number' && setHeight(wrapperHeight);
+      setTimeout(() => setHeight('auto'), 300);
+    }
 
-    wrapperHeight && setHeight(wrapperHeight);
     setIsOpen(!isOpen);
   };
 
@@ -27,11 +38,12 @@ const Accordion: React.FC<IAccordionProps> = ({ className, title, children }) =>
   const accordionClassNames = [classes.accordion];
   className && accordionClassNames.push(className);
 
+  const titleClassName =
+    type === Types.STYLED ? classes.accordionTitleStyled : classes.accordionTitle;
+
   return (
     <div className={accordionClassNames.join(' ')}>
-      <div
-        className={`${classes.accordionTitle}${visibilityClassName}`}
-        onClick={onAccordionTitleClick}>
+      <div className={`${titleClassName}${visibilityClassName}`} onClick={onAccordionTitleClick}>
         {title}
       </div>
 

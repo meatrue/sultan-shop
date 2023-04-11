@@ -1,29 +1,5 @@
-import { ProductItem } from '../types';
+import { Filters, FiltersMethods, PriceFilter, ProducersFilter, ProductItem, SortingOption } from '../types';
 import { filterByPrice, filterByProducers } from '../utils/utils';
-
-export type SortingOption = {
-  title: string;
-  field: string;
-  increase: boolean
-};
-
-type PriceFilter = {
-  min: number;
-  max: number;
-};
-
-type ProducersFilter = {
-  values: string[];
-};
-
-interface FiltersDinamicKeys {
-  [keys: string]: PriceFilter | ProducersFilter;
-}
-
-export interface Filters extends FiltersDinamicKeys {
-  price: PriceFilter;
-  producers: ProducersFilter;
-};
 
 export const PRICE_MIN = 0;
 export const PRICE_MAX = 10000;
@@ -61,13 +37,6 @@ export const FILTERS_DEFAULT: Filters = {
     values: []
   }
 };
-
-type PriceFilterMethod = (this: PriceFilter, items: ProductItem[]) => ProductItem[];
-type ProducersFilterMethod = (this: ProducersFilter, items: ProductItem[]) => ProductItem[];
-
-interface FiltersMethods {
-  [key: string]: PriceFilterMethod | ProducersFilterMethod;
-}
 
 export const filtersMethods: FiltersMethods = {
   price,

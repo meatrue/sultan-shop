@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { brands } from '../../store/brands';
 import { addToCart, deleteFromCart } from '../../store/slices/cart-slice';
 import { ProductItem } from '../../types';
+import Button from '../../ui/button/button';
 import Counter from '../counter/counter';
 import SizeLabel from '../size-label/size-label';
 
@@ -63,12 +64,7 @@ const CartItem: React.FC<IPropsCartItem> = ({ item, count }) => {
           </span>
         </div>
         <div className={classes.controlsItem}>
-          <button
-            className={`${classes.deleteButton} button`}
-            type="button"
-            aria-label="Удалить."
-            onClick={deleteItem}
-          />
+          <Button className={classes.deleteButton} aria-label="Удалить." onClick={deleteItem} />
         </div>
       </div>
     </div>

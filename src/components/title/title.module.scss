@@ -1,0 +1,29 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.title {
+  color: $color-base-black;
+}
+
+.large {
+  font-size: $fz-title-main;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  @include vp-767 {
+    font-size: $fz-title-main-mobile;
+  }
+}
+
+.medium {
+  font-size: $fz-title-secondary;
+
+  @include vp-767 {
+    font-size: $fz-title-secondary-mobile;
+  }
+}
+
+.small {
+  font-size: $fz-title-secondary;
+}

@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
+import Title from '../../components/title/title';
+import Button from '../../ui/button/button';
 import CartItem from '../../components/cart-item/cart-item';
 import { clearCart } from '../../store/slices/cart-slice';
 import GoBack from '../../components/go-back/go-back';
@@ -39,7 +41,8 @@ const Cart: React.FC = () => {
       )}
 
       <section>
-        <h1 className={classes.title}>Корзина</h1>
+        <Title tag="h1" size="large" className={classes.title} text="Корзина" />
+
         {!!items.length && !orderIsDone && (
           <>
             <ul className={`${classes.cartList} reset-list`}>
@@ -53,9 +56,8 @@ const Cart: React.FC = () => {
               })}
             </ul>
             <div className={classes.order}>
-              <button onClick={makeOrder} className={`${classes.orderButton} button`}>
-                Оформить заказ
-              </button>
+              <Button className={classes.orderButton} text="Оформить заказ" onClick={makeOrder} />
+
               <span className={classes.total}>
                 {String(totalPrice.toFixed(2)).replace('.', ',')} ₸
               </span>

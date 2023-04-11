@@ -1,5 +1,6 @@
 import { CARE_TYPE_FIELD } from '../store/care-types';
 import { producers } from '../store/producers';
+import { CartItem } from '../store/slices/cart-slice';
 import { Brands, Producers, ProductItem } from '../types';
 
 export function getItemsCountByFilter(
@@ -81,4 +82,15 @@ export function getProductById(
   id: string | undefined,
 ): ProductItem | undefined {
   return items.find((item) => item.barcode === id);
+}
+
+export function getTotalPrice(cartItems: CartItem[]): number {
+  return cartItems.reduce((sum, item) => {
+    const { product, count } = item;
+    return sum + product.price * count;
+  }, 0);
+}
+
+export function getCartTotalCount(cartItems: CartItem[]): number {
+  return cartItems.reduce((sum, item) => sum + item.count, 0);
 }

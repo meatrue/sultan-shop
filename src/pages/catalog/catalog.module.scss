@@ -36,20 +36,34 @@
 .title {
   margin-top: 0;
   margin-bottom: 4px;
-  font-size: $fz-title-main;
-  line-height: 1.2;
-  font-weight: 500;
-  text-transform: uppercase;
-  color: $color-base-black;
+}
 
+.filtersAccordion {
   @include vp-767 {
-    font-size: $fz-title-main-mobile;
+    margin-bottom: 15px;
   }
 }
 
 .filters {
   grid-column: 1 / 2;
-  margin: 0 auto;
+  justify-content: start;
+  width: 238px;
+  padding-top: 10px;
+
+  @include vp-767 {
+    min-width: $min-content-width;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.filtersTitle {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-base-black;
+  text-transform: uppercase;
 }
 
 .careTypes {
@@ -82,5 +96,15 @@
 
   @include vp-767 {
     grid-column: 1 / -1;
+  }
+}
+
+.bottomText {
+  grid-column: 2 / -1;
+  margin-top: 47px;
+
+  @include vp-767 {
+    grid-column: 1 / -1;
+    margin-top: 14px;
   }
 }

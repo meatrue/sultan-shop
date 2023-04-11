@@ -5,7 +5,7 @@ import { useTypedSelector } from '../../hooks/useTypedSelector';
 import { careTypes } from '../../store/care-types';
 import { setCareType } from '../../store/slices/filters-slice';
 
-import classes from './care-types.module.scss';
+import classes from './categories.module.scss';
 
 enum BlockWidth {
   MIN = '100px',
@@ -27,17 +27,17 @@ const getBlockWidth = (string: string): BlockWidth => {
   return BlockWidth.MID;
 };
 
-export enum CareTypesMode {
+export enum CategoriesMode {
   BLOCKS = 'blocks',
   LINKS = 'links',
 }
 
-interface ICareTypesProps {
+interface ICategoriesProps {
   className: string;
-  mode?: CareTypesMode;
+  mode?: CategoriesMode;
 }
 
-const CareTypes: React.FC<ICareTypesProps> = ({ className, mode = CareTypesMode.BLOCKS }) => {
+const Categories: React.FC<ICategoriesProps> = ({ className, mode = CategoriesMode.BLOCKS }) => {
   const { careType } = useTypedSelector((state) => state.filters);
   const dispatch = useDispatch();
 
@@ -48,13 +48,13 @@ const CareTypes: React.FC<ICareTypesProps> = ({ className, mode = CareTypesMode.
 
   const ContainerAdditionalClassName = className ? ` ${className}` : '';
 
-  let listClassName = classes.typesListBlocks;
-  let itemClassName = classes.typeItemBlock;
+  let listClassName = classes.listBlocks;
+  let itemClassName = classes.itemBlock;
   let activeItemClassName = classes.isActiveBlock;
 
-  if (mode === CareTypesMode.LINKS) {
-    listClassName = classes.typesListLinks;
-    itemClassName = classes.typeItemLink;
+  if (mode === CategoriesMode.LINKS) {
+    listClassName = classes.listLinks;
+    itemClassName = classes.itemLink;
     activeItemClassName = classes.isActiveLink;
   }
 
@@ -69,7 +69,7 @@ const CareTypes: React.FC<ICareTypesProps> = ({ className, mode = CareTypesMode.
             href="#"
             key={index}
             className={itemClassName + isActiveClassName}
-            style={mode === CareTypesMode.BLOCKS ? { width, minWidth: width } : {}}
+            style={mode === CategoriesMode.BLOCKS ? { width, minWidth: width } : {}}
             onClick={(e) => onFilterClick(e, index)}>
             {type}
           </a>
@@ -79,4 +79,4 @@ const CareTypes: React.FC<ICareTypesProps> = ({ className, mode = CareTypesMode.
   );
 };
 
-export default CareTypes;
+export default Categories;

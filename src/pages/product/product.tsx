@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import Accordion from '../../components/accordion/accordion';
 import Counter from '../../components/counter/counter';
+import Button from '../../ui/button/button';
 import SizeLabel from '../../components/size-label/size-label';
 import { brands } from '../../store/brands';
 import { producers } from '../../store/producers';
@@ -13,7 +14,8 @@ import { addToCart } from '../../store/slices/cart-slice';
 import GoBack from '../../components/go-back/go-back';
 import { ProductItem } from '../../types';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import catalogItems from '../../assets/catalog-items.json';
+import { careTypes } from '../../store/care-types';
+import { useGetProducts } from '../../hooks/useGetProducts';
 
 import classes from './product.module.scss';
 
@@ -30,18 +32,12 @@ const IN_STOCK_LABEL_PARAMS = {
 };
 
 const Product: React.FC = () => {
-  const isMobile = useMediaQuery({
-    query: '(max-width: 767px)',
-  });
-
-  const isMobileMedium = useMediaQuery({
-    query: '(max-width: 630px)',
-  });
-
   const products = useTypedSelector((state) => state.products.items);
 
   const { id } = useParams();
   const product: ProductItem | undefined = getProductById(products, id);
+
+  useGetProducts();
 
   const dispatch = useDispatch();
   const foundItem = useTypedSelector((state) =>
@@ -49,6 +45,14 @@ const Product: React.FC = () => {
   );
   const foundCount: number = foundItem?.count ?? 0;
   const [countInCart, setCountInCart] = useState<number>(foundCount);
+
+  const isMobile = useMediaQuery({
+    query: '(max-width: 767px)',
+  });
+
+  const isMobileMedium = useMediaQuery({
+    query: '(max-width: 630px)',
+  });
 
   if (!product) {
     return <h2 className={classes.notFound}>Товар не найден</h2>;
@@ -65,8 +69,19 @@ const Product: React.FC = () => {
     );
   };
 
-  const { name, description, imageUrl, sizeType, size, barcode, producer, brand, price, inStock } =
-    product;
+  const {
+    name,
+    description,
+    imageUrl,
+    sizeType,
+    size,
+    barcode,
+    producer,
+    brand,
+    price,
+    inStock,
+    careType,
+  } = product;
 
   const inStockLabelParams = inStock
     ? IN_STOCK_LABEL_PARAMS.inStock
@@ -98,11 +113,13 @@ const Product: React.FC = () => {
         <div className={`${classes.inStockLabel} ${inStockLabelParams.className}`}>
           {inStockLabelParams.title}
         </div>
+
         <h1 className={classes.title}>
           <span className={classes.titleBrand}>{brands[brand]}</span> {name}
         </h1>
 
         <SizeLabel size={size} sizeType={sizeType} className={classes.size} />
+
         {!isMobileMedium && (
           <div className={classes.addProductContainer}>
             <strong className={classes.price}>{String(price).replace('.', ',')} ₸</strong>
@@ -111,9 +128,7 @@ const Product: React.FC = () => {
               initialValue={countInCart}
               onChange={setCountInCart}
             />
-            <button className={`${classes.buyButton} button`} onClick={addItemToCart}>
-              В корзину
-            </button>
+            <Button className={classes.buyButton} text="В корзину" onClick={addItemToCart} />
           </div>
         )}
 
@@ -129,9 +144,7 @@ const Product: React.FC = () => {
             </div>
 
             <div className={classes.addProductContainer}>
-              <button className={`${classes.buyButton} button`} onClick={addItemToCart}>
-                В корзину
-              </button>
+              <Button className={classes.buyButton} text="В корзину" onClick={addItemToCart} />
               <button
                 className={`${classes.shareButton} button`}
                 type="button"
@@ -215,6 +228,14 @@ const Product: React.FC = () => {
             <dl className={classes.infoItem}>
               <dt className={classes.infoTitle}>Кол-во в коробке:</dt>
               <dd className={classes.infoContent}>12</dd>
+            </dl>
+            <dl className={classes.infoItem}>
+              <dt className={classes.infoTitle}>Категории:</dt>
+              <dd className={classes.infoContent + ' ' + classes.careTypesList}>
+                {careType.map((typeIndex) => (
+                  <span key={typeIndex}>{careTypes[typeIndex]}</span>
+                ))}
+              </dd>
             </dl>
           </div>
         </Accordion>

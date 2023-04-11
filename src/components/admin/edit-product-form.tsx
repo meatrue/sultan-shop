@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { InStockOption, ProductItem } from '../../types';
 import { brands } from '../../store/brands';
 import { careTypes } from '../../store/care-types';
 import { producers } from '../../store/producers';
@@ -8,8 +10,6 @@ import { changeProduct, deleteProduct } from '../../store/slices/products-slice'
 import { CATALOG_STORAGE_NAME, Storage } from '../../api/localstorage';
 
 import classes from './admin.module.scss';
-import { ProductItem } from '../../types';
-import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 const SIZE_TYPE_OPTIONS = ['мл', 'г'];
 
@@ -29,7 +29,7 @@ const EditProductForm: React.FC<IEditProductForm> = ({ className, product }) => 
   const [producerOption, setProducerOption] = useState<number>(product.producer);
   const [brandOption, setBrandOption] = useState<number>(product.brand);
   const [careTypeOptions, setCareTypeOptions] = useState<number[]>(product.careType);
-  const [inStockOption, setInStockOption] = useState<boolean>(product.inStock);
+  const [inStockOption, setInStockOption] = useState<string>(String(product.inStock));
 
   const products = useTypedSelector((state) => state.products.items);
   const dispatch = useDispatch();
@@ -60,7 +60,7 @@ const EditProductForm: React.FC<IEditProductForm> = ({ className, product }) => 
     setProducerOption(product.producer);
     setBrandOption(product.brand);
     setCareTypeOptions(product.careType);
-    setInStockOption(product.inStock);
+    setInStockOption(String(product.inStock));
   };
 
   const saveChanges: React.ChangeEventHandler<HTMLFormElement> = (e) => {
@@ -77,7 +77,7 @@ const EditProductForm: React.FC<IEditProductForm> = ({ className, product }) => 
       producer: producerOption,
       brand: brandOption,
       careType: careTypeOptions,
-      inStock: inStockOption,
+      inStock: inStockOption === InStockOption.TRUE ? true : false,
     };
 
     dispatch(changeProduct(changedProduct));
@@ -251,11 +251,11 @@ const EditProductForm: React.FC<IEditProductForm> = ({ className, product }) => 
           <span className={classes.formItemTitle}>В наличии:</span>
           <select
             className={classes.formSelect}
-            value={String(inStockOption)}
-            onChange={(e) => setInStockOption(Boolean(e.currentTarget.value))}
+            value={inStockOption}
+            onChange={(e) => setInStockOption(e.currentTarget.value)}
             required>
-            <option value={'true'}>да</option>
-            <option value={'false'}>нет</option>
+            <option value={InStockOption.TRUE}>да</option>
+            <option value={InStockOption.FALSE}>нет</option>
           </select>
         </label>
       </p>

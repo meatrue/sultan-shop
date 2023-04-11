@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
+import { ProductItem } from '../../types';
+import Button from '../../ui/button/button';
 import SizeLabel from '../size-label/size-label';
 import { brands } from '../../store/brands';
 import { producers } from '../../store/producers';
 import { addToCart } from '../../store/slices/cart-slice';
 
 import classes from './catalog-item.module.scss';
-import { ProductItem } from '../../types';
 
 interface ICatalogItemProps {
   item: ProductItem;
@@ -56,9 +57,8 @@ const CatalogItem: React.FC<ICatalogItemProps> = ({ item }) => {
 
       <p className={classes.priceCntainer}>
         <strong className={classes.price}>{String(price).replace('.', ',')} ₸</strong>
-        <button className={`${classes.buyButton} button`} onClick={onBuyButtonClick}>
-          В корзину
-        </button>
+
+        <Button className={classes.buyButton} text="В корзину" onClick={onBuyButtonClick} />
       </p>
     </article>
   );

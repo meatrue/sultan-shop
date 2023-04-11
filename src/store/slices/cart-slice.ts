@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ProductItem } from '../../types';
+import { getCartTotalCount, getTotalPrice } from '../../utils/utils';
 
-type CartItem = {
+export type CartItem = {
   product: ProductItem;
   count: number;
 };
@@ -39,23 +40,14 @@ const cartSlice = createSlice({
         });
       }
 
-      state.totalPrice = items.reduce((sum, item) => {
-        const {product, count} = item;
-        return sum + product.price * count;
-      }, 0);
-
-      state.totalCount = items.reduce((sum, item) => sum + item.count, 0);
+      state.totalPrice = getTotalPrice(items);
+      state.totalCount = getCartTotalCount(items);
     },
 
     deleteFromCart(state, action: PayloadAction<ProductItem>) {
       state.items = state.items.filter((item) => item.product.barcode !== action.payload.barcode);
-
-      state.totalPrice = state.items.reduce((sum, item) => {
-        const {product, count} = item;
-        return sum + product.price * count;
-      }, 0);
-
-      state.totalCount = state.items.reduce((sum, item) => sum + item.count, 0);
+      state.totalPrice = getTotalPrice(state.items);
+      state.totalCount = getCartTotalCount(state.items);
     },
 
     clearCart(state) {

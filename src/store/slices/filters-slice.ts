@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SortingOption, Filters } from '../filters';
+import { Filters, SortingOption } from '../../types';
 
 import {
   CARE_TYPE_DEFAULT,

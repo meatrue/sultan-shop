@@ -27,9 +27,49 @@
   }
 }
 
+.accordionTitleStyled {
+  position: relative;
+  display: inline-block;
+  padding-right: 75px;
+  font-size: 16px;
+  font-weight: 500;
+  color: $color-base-black;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    height: 32px;
+    margin: auto 0;
+    content: "";
+    background-color: rgba(255, 202, 101, 0.3);
+    background-image: url("../../assets/svg/arrow-left-dark.svg");
+    background-repeat: no-repeat;
+    background-size: 4px 8px;
+    background-position: center;
+    border-radius: 50%;
+    transform: rotate(90deg);
+    transition: transform $trans-base;
+  }
+}
+
 .isHidden {
+  .accordionContent {
+    //transform: translateY(-100%);
+  }
+
   &::after {
     transform: rotate(0deg);
+  }
+}
+
+.accordionTitleStyled.isHidden {
+  &::after {
+    transform: rotate(-90deg);
   }
 }
 
@@ -40,4 +80,6 @@
 
 .accordionContent {
   padding-top: 20px;
+  //transform: translateY(0);
+  transition: all 0.3s ease;
 }

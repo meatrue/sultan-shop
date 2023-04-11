@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { InStockOption } from '../../types';
 import { brands } from '../../store/brands';
 import { careTypes } from '../../store/care-types';
 import { producers } from '../../store/producers';
@@ -33,7 +34,7 @@ const AddProductForm: React.FC<IAddProductForm> = ({ className }) => {
   const [producerOption, setProducerOption] = useState<number>(PRODUCERS_DEFAULT);
   const [brandOption, setBrandOption] = useState<number>(BRANDS_DEFAULT);
   const [careTypeOptions, setCareTypeOptions] = useState<number[]>(CARE_TYPES_DEFAULT);
-  const [inStockOption, setInStockOption] = useState<boolean>(IN_STOCK_DEFAULT);
+  const [inStockOption, setInStockOption] = useState<string>(String(IN_STOCK_DEFAULT));
 
   const products = useTypedSelector((state) => state.products.items);
   const dispatch = useDispatch();
@@ -62,7 +63,7 @@ const AddProductForm: React.FC<IAddProductForm> = ({ className }) => {
       producer: producerOption,
       brand: brandOption,
       careType: careTypeOptions,
-      inStock: inStockOption,
+      inStock: inStockOption === InStockOption.TRUE ? true : false,
     };
 
     dispatch(addProduct(newProduct));
@@ -84,7 +85,7 @@ const AddProductForm: React.FC<IAddProductForm> = ({ className }) => {
     setProducerOption(PRODUCERS_DEFAULT);
     setBrandOption(BRANDS_DEFAULT);
     setCareTypeOptions(CARE_TYPES_DEFAULT);
-    setInStockOption(IN_STOCK_DEFAULT);
+    setInStockOption(String(IN_STOCK_DEFAULT));
   };
 
   const classNames = [];
@@ -241,10 +242,10 @@ const AddProductForm: React.FC<IAddProductForm> = ({ className }) => {
           <select
             className={classes.formSelect}
             value={String(inStockOption)}
-            onChange={(e) => setInStockOption(Boolean(e.currentTarget.value))}
+            onChange={(e) => setInStockOption(e.currentTarget.value)}
             required>
-            <option value={'true'}>да</option>
-            <option value={'false'}>нет</option>
+            <option value={InStockOption.TRUE}>да</option>
+            <option value={InStockOption.FALSE}>нет</option>
           </select>
         </label>
       </p>

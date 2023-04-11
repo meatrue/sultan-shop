@@ -1,31 +1,17 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import catalogItems from '../../assets/catalog-items.json';
-import { CATALOG_STORAGE_NAME, Storage } from '../../api/localstorage';
 import AddProductForm from '../../components/admin/add-product-form';
 import EditProductForm from '../../components/admin/edit-product-form';
-import { setProducts } from '../../store/slices/products-slice';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
 import classes from './admin.module.scss';
+import { useGetProducts } from '../../hooks/useGetProducts';
 
 const Admin: React.FC = () => {
   const products = useTypedSelector((state) => state.products.items);
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    const [loadedItems] = Storage.getFromStorage(CATALOG_STORAGE_NAME);
-
-    if (loadedItems && loadedItems.length) {
-      dispatch(setProducts(loadedItems));
-      return;
-    }
-
-    dispatch(setProducts(catalogItems));
-    Storage.saveToStorage(catalogItems, CATALOG_STORAGE_NAME);
-  }, []);
+  useGetProducts();
 
   return (
     <main className={classes.main}>

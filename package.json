@@ -20,10 +20,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "check-types": "tsc"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,7 +49,12 @@
     "@types/node": "^12.20.55",
     "@types/react": "^17.0.56",
     "@types/react-dom": "^17.0.19",
+    "global-jsdom": "^8.8.0",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "jsdom": "^21.1.1",
     "node-sass": "^6.0.1",
+    "ts-jest": "^29.1.0",
     "typescript": "^4.9.5",
     "typescript-plugin-css-modules": "^3.4.0",
     "web-vitals": "^1.1.2"

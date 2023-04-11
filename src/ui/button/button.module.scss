@@ -1,0 +1,22 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.button {
+  padding-top: 21px;
+  padding-bottom: 21px;
+  color: $color-base-white;
+  background-color: $color-accent;
+  border: none;
+  border-radius: $br-button;
+  cursor: pointer;
+  transition: all $trans-base;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}

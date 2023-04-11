@@ -1,12 +1,12 @@
 @import "../../scss/variables";
 @import "../../scss/mixins";
 
-.typesListBlocks {
+.listBlocks {
   display: flex;
   flex-wrap: wrap;
 }
 
-.typeItemBlock {
+.itemBlock {
   position: relative;
   z-index: 1;
   min-width: 100px;
@@ -46,12 +46,12 @@
   background-color: rgba(63, 78, 101, 0.04);
 }
 
-.typesListLinks {
+.listLinks {
   display: flex;
   flex-direction: column;
 }
 
-.typeItemLink {
+.itemLink {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 500;
@@ -62,6 +62,14 @@
 
   &:hover {
     opacity: 0.6;
+  }
+
+  @include vp-767 {
+    margin-bottom: 10px;
+    font-size: $fz-base;
+    font-weight: 400;
+    color: $color-primary;
+    text-transform: none;
   }
 }
 
