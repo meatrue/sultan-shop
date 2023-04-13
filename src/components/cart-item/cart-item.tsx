@@ -39,7 +39,7 @@ const CartItem: React.FC<IPropsCartItem> = ({ item, count }) => {
   const itemFullPrice = price * count;
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} data-testid="cart-item">
       <Link className={classes.image} to={`/products/${barcode}`}>
         <img src={`img/catalog/${imageUrl}`} alt={name} />
       </Link>
@@ -59,12 +59,17 @@ const CartItem: React.FC<IPropsCartItem> = ({ item, count }) => {
           <Counter className={classes.counter} initialValue={count} onChange={changeCountOfItem} />
         </div>
         <div className={classes.controlsItem}>
-          <span className={classes.price}>
+          <span className={classes.price} data-testid="cart-item-price">
             {String(itemFullPrice.toFixed(2)).replace('.', ',')}&nbsp;₸
           </span>
         </div>
         <div className={classes.controlsItem}>
-          <Button className={classes.deleteButton} aria-label="Удалить." onClick={deleteItem} />
+          <Button
+            className={classes.deleteButton}
+            aria-label="Удалить."
+            onClick={deleteItem}
+            data-testid="delete-from-cart-button"
+          />
         </div>
       </div>
     </div>

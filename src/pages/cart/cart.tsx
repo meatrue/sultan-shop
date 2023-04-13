@@ -56,7 +56,12 @@ const Cart: React.FC = () => {
               })}
             </ul>
             <div className={classes.order}>
-              <Button className={classes.orderButton} text="Оформить заказ" onClick={makeOrder} />
+              <Button
+                className={classes.orderButton}
+                text="Оформить заказ"
+                onClick={makeOrder}
+                data-testid="make-order-button"
+              />
 
               <span className={classes.total}>
                 {String(totalPrice.toFixed(2)).replace('.', ',')} ₸

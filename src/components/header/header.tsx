@@ -82,10 +82,13 @@ const Header: React.FC = () => {
             </a>
           </div>
           <button className={`${classes.downloadButton} button`}>Прайс-лист</button>
-          <Link className={classes.cart} to="/cart">
+          <Link className={classes.cart} to="/cart" data-testid="header-cart">
             <span className={classes.cartCount}>
               {!!totalCount && (
-                <strong className={classes.cartLabel} data-count={totalCount}></strong>
+                <strong
+                  className={classes.cartLabel}
+                  data-count={totalCount}
+                  data-testid="header-cart-count"></strong>
               )}
             </span>
             <span className={classes.cartAdditional}>

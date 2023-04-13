@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 
 import classes from './counter.module.scss';
 
-interface ICounterProps {
-  className: String;
+export interface ICounterProps {
+  className?: String;
   initialValue: number;
   onChange: (value: number) => void;
 }
@@ -48,12 +48,20 @@ const Counter: React.FC<ICounterProps> = ({ className, initialValue, onChange })
         className={decButtonClassNames.join(' ')}
         aria-label="Уменьшить"
         onClick={decrementValue}
+        data-testid="decrement-button"
       />
-      <input className={classes.number} type="number" value={value} onInput={changeValue} />
+      <input
+        className={classes.number}
+        type="number"
+        value={value}
+        onInput={changeValue}
+        data-testid="counter-input"
+      />
       <button
         className={incButtonClassNames.join(' ')}
         aria-label="Увеличить"
         onClick={incrementValue}
+        data-testid="increment-button"
       />
     </div>
   );

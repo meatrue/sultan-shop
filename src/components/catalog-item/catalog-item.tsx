@@ -58,7 +58,12 @@ const CatalogItem: React.FC<ICatalogItemProps> = ({ item }) => {
       <p className={classes.priceCntainer}>
         <strong className={classes.price}>{String(price).replace('.', ',')} ₸</strong>
 
-        <Button className={classes.buyButton} text="В корзину" onClick={onBuyButtonClick} />
+        <Button
+          data-testid="add-to-cart"
+          className={classes.buyButton}
+          text="В корзину"
+          onClick={onBuyButtonClick}
+        />
       </p>
     </article>
   );
